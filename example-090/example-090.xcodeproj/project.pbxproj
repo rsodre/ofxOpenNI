@@ -1,0 +1,739 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DBBC57631C93AA8B00965CA9 /* libNiTE2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBC57271C93AA8B00965CA9 /* libNiTE2.dylib */; };
+		DBBC57641C93AA8B00965CA9 /* libDepthUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBC57521C93AA8B00965CA9 /* libDepthUtils.a */; };
+		DBBC57651C93AA8B00965CA9 /* libMWClosestPoint.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBC57531C93AA8B00965CA9 /* libMWClosestPoint.dylib */; };
+		DBBC57661C93AA8B00965CA9 /* libOpenNI2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBC57541C93AA8B00965CA9 /* libOpenNI2.dylib */; };
+		DBBC57671C93AA8B00965CA9 /* libOpenNI2.jni.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBC57551C93AA8B00965CA9 /* libOpenNI2.jni.dylib */; };
+		DBBC576C1C93AA8C00965CA9 /* ofxOpenNI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DBBC575F1C93AA8B00965CA9 /* ofxOpenNI.cpp */; };
+		DBBC576F1C93AAA200965CA9 /* testApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DBBC576D1C93AAA200965CA9 /* testApp.cpp */; };
+		DBBC57731C93ADBE00965CA9 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBC57721C93ADBE00965CA9 /* GLUT.framework */; };
+		DBBC57741C93ADC900965CA9 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBC57721C93ADBE00965CA9 /* GLUT.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DBBC57761C93ADF000965CA9 /* libDepthUtils.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBC57521C93AA8B00965CA9 /* libDepthUtils.a */; };
+		DBBC57771C93AE0400965CA9 /* libMWClosestPoint.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBC57531C93AA8B00965CA9 /* libMWClosestPoint.dylib */; };
+		DBBC57781C93AE0400965CA9 /* libOpenNI2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBC57541C93AA8B00965CA9 /* libOpenNI2.dylib */; };
+		DBBC57791C93AE0400965CA9 /* libOpenNI2.jni.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBC57551C93AA8B00965CA9 /* libOpenNI2.jni.dylib */; };
+		DBBC577A1C93AE2C00965CA9 /* libNiTE2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBC57271C93AA8B00965CA9 /* libNiTE2.dylib */; };
+		DBBC577B1C93AE3500965CA9 /* NiTE.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBC57281C93AA8B00965CA9 /* NiTE.ini */; };
+		DBBC577C1C93AE3800965CA9 /* OpenNI.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBC57561C93AA8B00965CA9 /* OpenNI.ini */; };
+		DBBC577D1C93AE3B00965CA9 /* PS1080.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBC575D1C93AA8B00965CA9 /* PS1080.ini */; };
+		DBBC577F1C93AE5C00965CA9 /* FeatureExtraction.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBC572F1C93AA8B00965CA9 /* FeatureExtraction.ini */; };
+		DBBC57801C93AE6500965CA9 /* h.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBC57301C93AA8B00965CA9 /* h.dat */; };
+		DBBC57811C93AE6D00965CA9 /* HandAlgorithms.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBC57311C93AA8B00965CA9 /* HandAlgorithms.ini */; };
+		DBBC57821C93AE6F00965CA9 /* s.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBC57321C93AA8B00965CA9 /* s.dat */; };
+		DBC09DB81C93B77100609719 /* libOniFile.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DBC09DB51C93B77100609719 /* libOniFile.dylib */; };
+		DBC09DB91C93B77100609719 /* libPS1080.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DBC09DB61C93B77100609719 /* libPS1080.dylib */; };
+		DBC09DBA1C93B77100609719 /* libPSLink.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DBC09DB71C93B77100609719 /* libPSLink.dylib */; };
+		DBC09DCA1C93C0BE00609719 /* libOniFile.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBC09DB51C93B77100609719 /* libOniFile.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		DBC09DCB1C93C0BE00609719 /* libPS1080.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBC09DB61C93B77100609719 /* libPS1080.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		DBC09DCC1C93C0BE00609719 /* libPSLink.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBC09DB71C93B77100609719 /* libPSLink.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		DBC09DCD1C93C13300609719 /* lbsdata.idx in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBC572B1C93AA8B00965CA9 /* lbsdata.idx */; };
+		DBC09DCE1C93C13300609719 /* lbsdata.lbd in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBC572C1C93AA8B00965CA9 /* lbsdata.lbd */; };
+		DBC09DCF1C93C13300609719 /* lbsparam1.lbd in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBC572D1C93AA8B00965CA9 /* lbsparam1.lbd */; };
+		DBC09DD01C93C13300609719 /* lbsparam2.lbd in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBBC572E1C93AA8B00965CA9 /* lbsparam2.lbd */; };
+		DBC09DD71C93D06F00609719 /* libusb-1.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DBC09DD61C93D06F00609719 /* libusb-1.0.0.dylib */; };
+		DBC09DD81C93D07B00609719 /* libusb-1.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBC09DD61C93D06F00609719 /* libusb-1.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		DBC09DDA1C93D29000609719 /* libFreenectDriver.0.5.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DBC09DD91C93D29000609719 /* libFreenectDriver.0.5.3.dylib */; };
+		DBC09DDB1C93D29300609719 /* libFreenectDriver.0.5.3.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBC09DD91C93D29000609719 /* libFreenectDriver.0.5.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
+		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E4328147138ABC890047C5CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E4B27C1510CBEB8E00536013;
+			remoteInfo = openFrameworks;
+		};
+		E4EEB9AB138B136A00A80321 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E4B27C1410CBEB8E00536013;
+			remoteInfo = openFrameworks;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DBBC57751C93ADD200965CA9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				DBBC57761C93ADF000965CA9 /* libDepthUtils.a in CopyFiles */,
+				DBBC57771C93AE0400965CA9 /* libMWClosestPoint.dylib in CopyFiles */,
+				DBBC57781C93AE0400965CA9 /* libOpenNI2.dylib in CopyFiles */,
+				DBBC57791C93AE0400965CA9 /* libOpenNI2.jni.dylib in CopyFiles */,
+				DBBC577A1C93AE2C00965CA9 /* libNiTE2.dylib in CopyFiles */,
+				DBBC577B1C93AE3500965CA9 /* NiTE.ini in CopyFiles */,
+				DBBC577C1C93AE3800965CA9 /* OpenNI.ini in CopyFiles */,
+				DBBC577D1C93AE3B00965CA9 /* PS1080.ini in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBBC577E1C93AE3F00965CA9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = NiTE2;
+			dstSubfolderSpec = 7;
+			files = (
+				DBBC577F1C93AE5C00965CA9 /* FeatureExtraction.ini in CopyFiles */,
+				DBBC57801C93AE6500965CA9 /* h.dat in CopyFiles */,
+				DBBC57811C93AE6D00965CA9 /* HandAlgorithms.ini in CopyFiles */,
+				DBBC57821C93AE6F00965CA9 /* s.dat in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBBC57831C93AE7F00965CA9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = NiTE2/Data;
+			dstSubfolderSpec = 7;
+			files = (
+				DBC09DCD1C93C13300609719 /* lbsdata.idx in CopyFiles */,
+				DBC09DCE1C93C13300609719 /* lbsdata.lbd in CopyFiles */,
+				DBC09DCF1C93C13300609719 /* lbsparam1.lbd in CopyFiles */,
+				DBC09DD01C93C13300609719 /* lbsparam2.lbd in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBBC57881C93AE9600965CA9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = OpenNI2/Drivers;
+			dstSubfolderSpec = 6;
+			files = (
+				DBC09DDB1C93D29300609719 /* libFreenectDriver.0.5.3.dylib in CopyFiles */,
+				DBC09DD81C93D07B00609719 /* libusb-1.0.0.dylib in CopyFiles */,
+				DBC09DCA1C93C0BE00609719 /* libOniFile.dylib in CopyFiles */,
+				DBC09DCB1C93C0BE00609719 /* libPS1080.dylib in CopyFiles */,
+				DBC09DCC1C93C0BE00609719 /* libPSLink.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4C2427710CC5ABF004149E2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DBBC57741C93ADC900965CA9 /* GLUT.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DBBC57201C93AA8B00965CA9 /* NiTE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NiTE.h; sourceTree = "<group>"; };
+		DBBC57211C93AA8B00965CA9 /* NiteCAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NiteCAPI.h; sourceTree = "<group>"; };
+		DBBC57221C93AA8B00965CA9 /* NiteCEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NiteCEnums.h; sourceTree = "<group>"; };
+		DBBC57231C93AA8B00965CA9 /* NiteCTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NiteCTypes.h; sourceTree = "<group>"; };
+		DBBC57241C93AA8B00965CA9 /* NiteEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NiteEnums.h; sourceTree = "<group>"; };
+		DBBC57251C93AA8B00965CA9 /* NiteVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NiteVersion.h; sourceTree = "<group>"; };
+		DBBC57271C93AA8B00965CA9 /* libNiTE2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libNiTE2.dylib; sourceTree = "<group>"; };
+		DBBC57281C93AA8B00965CA9 /* NiTE.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NiTE.ini; sourceTree = "<group>"; };
+		DBBC572B1C93AA8B00965CA9 /* lbsdata.idx */ = {isa = PBXFileReference; lastKnownFileType = file; path = lbsdata.idx; sourceTree = "<group>"; };
+		DBBC572C1C93AA8B00965CA9 /* lbsdata.lbd */ = {isa = PBXFileReference; lastKnownFileType = file; path = lbsdata.lbd; sourceTree = "<group>"; };
+		DBBC572D1C93AA8B00965CA9 /* lbsparam1.lbd */ = {isa = PBXFileReference; lastKnownFileType = file; path = lbsparam1.lbd; sourceTree = "<group>"; };
+		DBBC572E1C93AA8B00965CA9 /* lbsparam2.lbd */ = {isa = PBXFileReference; lastKnownFileType = file; path = lbsparam2.lbd; sourceTree = "<group>"; };
+		DBBC572F1C93AA8B00965CA9 /* FeatureExtraction.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FeatureExtraction.ini; sourceTree = "<group>"; };
+		DBBC57301C93AA8B00965CA9 /* h.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = h.dat; sourceTree = "<group>"; };
+		DBBC57311C93AA8B00965CA9 /* HandAlgorithms.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HandAlgorithms.ini; sourceTree = "<group>"; };
+		DBBC57321C93AA8B00965CA9 /* s.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = s.dat; sourceTree = "<group>"; };
+		DBBC57381C93AA8B00965CA9 /* OniDriverAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OniDriverAPI.h; sourceTree = "<group>"; };
+		DBBC57391C93AA8B00965CA9 /* OniDriverTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OniDriverTypes.h; sourceTree = "<group>"; };
+		DBBC573A1C93AA8B00965CA9 /* KinectProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KinectProperties.h; sourceTree = "<group>"; };
+		DBBC57401C93AA8B00965CA9 /* OniPlatformMacOSX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OniPlatformMacOSX.h; sourceTree = "<group>"; };
+		DBBC57411C93AA8B00965CA9 /* OniCAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OniCAPI.h; sourceTree = "<group>"; };
+		DBBC57421C93AA8B00965CA9 /* OniCEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OniCEnums.h; sourceTree = "<group>"; };
+		DBBC57431C93AA8B00965CA9 /* OniCProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OniCProperties.h; sourceTree = "<group>"; };
+		DBBC57441C93AA8B00965CA9 /* OniCTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OniCTypes.h; sourceTree = "<group>"; };
+		DBBC57451C93AA8B00965CA9 /* OniEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OniEnums.h; sourceTree = "<group>"; };
+		DBBC57461C93AA8B00965CA9 /* OniPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OniPlatform.h; sourceTree = "<group>"; };
+		DBBC57471C93AA8B00965CA9 /* OniProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OniProperties.h; sourceTree = "<group>"; };
+		DBBC57481C93AA8B00965CA9 /* OniTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OniTest.h; sourceTree = "<group>"; };
+		DBBC57491C93AA8B00965CA9 /* OniVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OniVersion.h; sourceTree = "<group>"; };
+		DBBC574A1C93AA8B00965CA9 /* OpenNI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenNI.h; sourceTree = "<group>"; };
+		DBBC574B1C93AA8B00965CA9 /* PrimeSense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrimeSense.h; sourceTree = "<group>"; };
+		DBBC574C1C93AA8B00965CA9 /* PS1080.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PS1080.h; sourceTree = "<group>"; };
+		DBBC574D1C93AA8B00965CA9 /* PSLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLink.h; sourceTree = "<group>"; };
+		DBBC57521C93AA8B00965CA9 /* libDepthUtils.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDepthUtils.a; sourceTree = "<group>"; };
+		DBBC57531C93AA8B00965CA9 /* libMWClosestPoint.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libMWClosestPoint.dylib; sourceTree = "<group>"; };
+		DBBC57541C93AA8B00965CA9 /* libOpenNI2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libOpenNI2.dylib; sourceTree = "<group>"; };
+		DBBC57551C93AA8B00965CA9 /* libOpenNI2.jni.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libOpenNI2.jni.dylib; sourceTree = "<group>"; };
+		DBBC57561C93AA8B00965CA9 /* OpenNI.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OpenNI.ini; sourceTree = "<group>"; };
+		DBBC575D1C93AA8B00965CA9 /* PS1080.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PS1080.ini; sourceTree = "<group>"; };
+		DBBC575F1C93AA8B00965CA9 /* ofxOpenNI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxOpenNI.cpp; sourceTree = "<group>"; };
+		DBBC57601C93AA8B00965CA9 /* ofxOpenNI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxOpenNI.h; sourceTree = "<group>"; };
+		DBBC57611C93AA8B00965CA9 /* ofxOpenNITypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxOpenNITypes.h; sourceTree = "<group>"; };
+		DBBC57621C93AA8B00965CA9 /* ofxOpenNIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxOpenNIUtils.h; sourceTree = "<group>"; };
+		DBBC576D1C93AAA200965CA9 /* testApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = testApp.cpp; sourceTree = "<group>"; };
+		DBBC576E1C93AAA200965CA9 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
+		DBBC57721C93ADBE00965CA9 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
+		DBC09DB51C93B77100609719 /* libOniFile.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libOniFile.dylib; sourceTree = "<group>"; };
+		DBC09DB61C93B77100609719 /* libPS1080.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libPS1080.dylib; sourceTree = "<group>"; };
+		DBC09DB71C93B77100609719 /* libPSLink.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libPSLink.dylib; sourceTree = "<group>"; };
+		DBC09DD61C93D06F00609719 /* libusb-1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libusb-1.0.0.dylib"; sourceTree = "<group>"; };
+		DBC09DD91C93D29000609719 /* libFreenectDriver.0.5.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libFreenectDriver.0.5.3.dylib; sourceTree = "<group>"; };
+		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
+		E4B69B5B0A3A1756003C02F2 /* example-090Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "example-090Debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
+		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
+		E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CoreOF.xcconfig; path = ../../../libs/openFrameworksCompiled/project/osx/CoreOF.xcconfig; sourceTree = SOURCE_ROOT; };
+		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E4B69B590A3A1756003C02F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBC09DB81C93B77100609719 /* libOniFile.dylib in Frameworks */,
+				E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */,
+				DBBC57671C93AA8B00965CA9 /* libOpenNI2.jni.dylib in Frameworks */,
+				DBC09DD71C93D06F00609719 /* libusb-1.0.0.dylib in Frameworks */,
+				DBBC57631C93AA8B00965CA9 /* libNiTE2.dylib in Frameworks */,
+				DBBC57641C93AA8B00965CA9 /* libDepthUtils.a in Frameworks */,
+				DBBC57651C93AA8B00965CA9 /* libMWClosestPoint.dylib in Frameworks */,
+				DBC09DB91C93B77100609719 /* libPS1080.dylib in Frameworks */,
+				DBC09DDA1C93D29000609719 /* libFreenectDriver.0.5.3.dylib in Frameworks */,
+				DBBC57661C93AA8B00965CA9 /* libOpenNI2.dylib in Frameworks */,
+				DBBC57731C93ADBE00965CA9 /* GLUT.framework in Frameworks */,
+				DBC09DBA1C93B77100609719 /* libPSLink.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6948EE371B920CB800B5AC1A /* local_addons */ = {
+			isa = PBXGroup;
+			children = (
+				DBBC57721C93ADBE00965CA9 /* GLUT.framework */,
+			);
+			name = local_addons;
+			sourceTree = "<group>";
+		};
+		BB4B014C10F69532006C3DED /* addons */ = {
+			isa = PBXGroup;
+			children = (
+				DBBC571B1C93AA8400965CA9 /* ofxOpenNI-experimental */,
+			);
+			name = addons;
+			sourceTree = "<group>";
+		};
+		DBBC571B1C93AA8400965CA9 /* ofxOpenNI-experimental */ = {
+			isa = PBXGroup;
+			children = (
+				DBBC571C1C93AA8B00965CA9 /* libs */,
+				DBBC575E1C93AA8B00965CA9 /* src */,
+			);
+			name = "ofxOpenNI-experimental";
+			sourceTree = "<group>";
+		};
+		DBBC571C1C93AA8B00965CA9 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				DBBC571D1C93AA8B00965CA9 /* nite2 */,
+				DBBC57331C93AA8B00965CA9 /* openni2 */,
+			);
+			name = libs;
+			path = ../libs;
+			sourceTree = "<group>";
+		};
+		DBBC571D1C93AA8B00965CA9 /* nite2 */ = {
+			isa = PBXGroup;
+			children = (
+				DBBC571E1C93AA8B00965CA9 /* lib */,
+			);
+			path = nite2;
+			sourceTree = "<group>";
+		};
+		DBBC571E1C93AA8B00965CA9 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				DBBC571F1C93AA8B00965CA9 /* include */,
+				DBBC57261C93AA8B00965CA9 /* osx */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		DBBC571F1C93AA8B00965CA9 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				DBBC57201C93AA8B00965CA9 /* NiTE.h */,
+				DBBC57211C93AA8B00965CA9 /* NiteCAPI.h */,
+				DBBC57221C93AA8B00965CA9 /* NiteCEnums.h */,
+				DBBC57231C93AA8B00965CA9 /* NiteCTypes.h */,
+				DBBC57241C93AA8B00965CA9 /* NiteEnums.h */,
+				DBBC57251C93AA8B00965CA9 /* NiteVersion.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		DBBC57261C93AA8B00965CA9 /* osx */ = {
+			isa = PBXGroup;
+			children = (
+				DBBC57271C93AA8B00965CA9 /* libNiTE2.dylib */,
+				DBBC57281C93AA8B00965CA9 /* NiTE.ini */,
+				DBBC57291C93AA8B00965CA9 /* NiTE2 */,
+			);
+			path = osx;
+			sourceTree = "<group>";
+		};
+		DBBC57291C93AA8B00965CA9 /* NiTE2 */ = {
+			isa = PBXGroup;
+			children = (
+				DBBC572A1C93AA8B00965CA9 /* Data */,
+				DBBC572F1C93AA8B00965CA9 /* FeatureExtraction.ini */,
+				DBBC57301C93AA8B00965CA9 /* h.dat */,
+				DBBC57311C93AA8B00965CA9 /* HandAlgorithms.ini */,
+				DBBC57321C93AA8B00965CA9 /* s.dat */,
+			);
+			path = NiTE2;
+			sourceTree = "<group>";
+		};
+		DBBC572A1C93AA8B00965CA9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DBBC572B1C93AA8B00965CA9 /* lbsdata.idx */,
+				DBBC572C1C93AA8B00965CA9 /* lbsdata.lbd */,
+				DBBC572D1C93AA8B00965CA9 /* lbsparam1.lbd */,
+				DBBC572E1C93AA8B00965CA9 /* lbsparam2.lbd */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		DBBC57331C93AA8B00965CA9 /* openni2 */ = {
+			isa = PBXGroup;
+			children = (
+				DBBC57341C93AA8B00965CA9 /* include */,
+				DBBC57501C93AA8B00965CA9 /* lib */,
+			);
+			path = openni2;
+			sourceTree = "<group>";
+		};
+		DBBC57341C93AA8B00965CA9 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				DBBC57371C93AA8B00965CA9 /* Driver */,
+				DBBC573A1C93AA8B00965CA9 /* KinectProperties.h */,
+				DBBC573F1C93AA8B00965CA9 /* MacOSX */,
+				DBBC57411C93AA8B00965CA9 /* OniCAPI.h */,
+				DBBC57421C93AA8B00965CA9 /* OniCEnums.h */,
+				DBBC57431C93AA8B00965CA9 /* OniCProperties.h */,
+				DBBC57441C93AA8B00965CA9 /* OniCTypes.h */,
+				DBBC57451C93AA8B00965CA9 /* OniEnums.h */,
+				DBBC57461C93AA8B00965CA9 /* OniPlatform.h */,
+				DBBC57471C93AA8B00965CA9 /* OniProperties.h */,
+				DBBC57481C93AA8B00965CA9 /* OniTest.h */,
+				DBBC57491C93AA8B00965CA9 /* OniVersion.h */,
+				DBBC574A1C93AA8B00965CA9 /* OpenNI.h */,
+				DBBC574B1C93AA8B00965CA9 /* PrimeSense.h */,
+				DBBC574C1C93AA8B00965CA9 /* PS1080.h */,
+				DBBC574D1C93AA8B00965CA9 /* PSLink.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		DBBC57371C93AA8B00965CA9 /* Driver */ = {
+			isa = PBXGroup;
+			children = (
+				DBBC57381C93AA8B00965CA9 /* OniDriverAPI.h */,
+				DBBC57391C93AA8B00965CA9 /* OniDriverTypes.h */,
+			);
+			path = Driver;
+			sourceTree = "<group>";
+		};
+		DBBC573F1C93AA8B00965CA9 /* MacOSX */ = {
+			isa = PBXGroup;
+			children = (
+				DBBC57401C93AA8B00965CA9 /* OniPlatformMacOSX.h */,
+			);
+			path = MacOSX;
+			sourceTree = "<group>";
+		};
+		DBBC57501C93AA8B00965CA9 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				DBBC57511C93AA8B00965CA9 /* osx */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		DBBC57511C93AA8B00965CA9 /* osx */ = {
+			isa = PBXGroup;
+			children = (
+				DBBC57521C93AA8B00965CA9 /* libDepthUtils.a */,
+				DBBC57531C93AA8B00965CA9 /* libMWClosestPoint.dylib */,
+				DBBC57541C93AA8B00965CA9 /* libOpenNI2.dylib */,
+				DBBC57551C93AA8B00965CA9 /* libOpenNI2.jni.dylib */,
+				DBBC57561C93AA8B00965CA9 /* OpenNI.ini */,
+				DBBC57571C93AA8B00965CA9 /* OpenNI2 */,
+				DBBC575D1C93AA8B00965CA9 /* PS1080.ini */,
+			);
+			path = osx;
+			sourceTree = "<group>";
+		};
+		DBBC57571C93AA8B00965CA9 /* OpenNI2 */ = {
+			isa = PBXGroup;
+			children = (
+				DBBC57581C93AA8B00965CA9 /* Drivers */,
+			);
+			path = OpenNI2;
+			sourceTree = "<group>";
+		};
+		DBBC57581C93AA8B00965CA9 /* Drivers */ = {
+			isa = PBXGroup;
+			children = (
+				DBC09DD91C93D29000609719 /* libFreenectDriver.0.5.3.dylib */,
+				DBC09DD61C93D06F00609719 /* libusb-1.0.0.dylib */,
+				DBC09DB51C93B77100609719 /* libOniFile.dylib */,
+				DBC09DB61C93B77100609719 /* libPS1080.dylib */,
+				DBC09DB71C93B77100609719 /* libPSLink.dylib */,
+			);
+			path = Drivers;
+			sourceTree = "<group>";
+		};
+		DBBC575E1C93AA8B00965CA9 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				DBBC575F1C93AA8B00965CA9 /* ofxOpenNI.cpp */,
+				DBBC57601C93AA8B00965CA9 /* ofxOpenNI.h */,
+				DBBC57611C93AA8B00965CA9 /* ofxOpenNITypes.h */,
+				DBBC57621C93AA8B00965CA9 /* ofxOpenNIUtils.h */,
+			);
+			name = src;
+			path = ../src;
+			sourceTree = "<group>";
+		};
+		E4328144138ABC890047C5CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4328148138ABC890047C5CB /* openFrameworksDebug.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4B69B4A0A3A1720003C02F2 = {
+			isa = PBXGroup;
+			children = (
+				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
+				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
+				E4B69E1C0A3A1BDC003C02F2 /* src */,
+				BB4B014C10F69532006C3DED /* addons */,
+				E4EEC9E9138DF44700A80321 /* openFrameworks */,
+				6948EE371B920CB800B5AC1A /* local_addons */,
+				E4B69B5B0A3A1756003C02F2 /* example-090Debug.app */,
+			);
+			sourceTree = "<group>";
+		};
+		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
+				DBBC576E1C93AAA200965CA9 /* testApp.h */,
+				DBBC576D1C93AAA200965CA9 /* testApp.cpp */,
+			);
+			path = src;
+			sourceTree = SOURCE_ROOT;
+		};
+		E4EEC9E9138DF44700A80321 /* openFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */,
+				E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */,
+			);
+			name = openFrameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E4B69B5A0A3A1756003C02F2 /* example-090 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "example-090" */;
+			buildPhases = (
+				E4B69B580A3A1756003C02F2 /* Sources */,
+				E4B69B590A3A1756003C02F2 /* Frameworks */,
+				E4B6FFFD0C3F9AB9008CF71C /* ShellScript */,
+				E4C2427710CC5ABF004149E2 /* CopyFiles */,
+				DBBC57751C93ADD200965CA9 /* CopyFiles */,
+				DBBC57881C93AE9600965CA9 /* CopyFiles */,
+				DBBC577E1C93AE3F00965CA9 /* CopyFiles */,
+				DBBC57831C93AE7F00965CA9 /* CopyFiles */,
+				8466F1851C04CA0E00918B1C /* ShellScript */,
+				DBC09DC21C93B97E00609719 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4EEB9AC138B136A00A80321 /* PBXTargetDependency */,
+			);
+			name = "example-090";
+			productName = myOFApp;
+			productReference = E4B69B5B0A3A1756003C02F2 /* example-090Debug.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E4B69B4C0A3A1720003C02F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+			};
+			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "example-090" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = E4B69B4A0A3A1720003C02F2;
+			productRefGroup = E4B69B4A0A3A1720003C02F2;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E4328144138ABC890047C5CB /* Products */;
+					ProjectRef = E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				E4B69B5A0A3A1756003C02F2 /* example-090 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E4328148138ABC890047C5CB /* openFrameworksDebug.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = openFrameworksDebug.a;
+			remoteRef = E4328147138ABC890047C5CB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8466F1851C04CA0E00918B1C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# ---- Code Sign App Package ----\n \n# WARNING: You may have to run Clean in Xcode after changing CODE_SIGN_IDENTITY!\n\n# Verify that $CODE_SIGN_IDENTITY is set\nif [ -z \"${CODE_SIGN_IDENTITY}\" ] ; then\necho \"CODE_SIGN_IDENTITY needs to be set for framework code-signing\"\nexit 0\nfi\n\nif [ -z \"${CODE_SIGN_ENTITLEMENTS}\" ] ; then\necho \"CODE_SIGN_ENTITLEMENTS needs to be set for framework code-signing!\"\n\nif [ \"${CONFIGURATION}\" = \"Release\" ] ; then\nexit 1\nelse\n# Code-signing is optional for non-release builds.\nexit 0\nfi\nfi\n\nITEMS=\"\"\n\nFRAMEWORKS_DIR=\"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}\"\necho \"$FRAMEWORKS_DIR\"\nif [ -d \"$FRAMEWORKS_DIR\" ] ; then\nFRAMEWORKS=$(find \"${FRAMEWORKS_DIR}\" -depth -type d -name \"*.framework\" -or -name \"*.dylib\" -or -name \"*.bundle\" | sed -e \"s/\\(.*framework\\)/\\1\\/Versions\\/A\\//\")\nRESULT=$?\nif [[ $RESULT != 0 ]] ; then\nexit 1\nfi\n\nITEMS=\"${FRAMEWORKS}\"\nfi\n\nLOGINITEMS_DIR=\"${TARGET_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/Library/LoginItems/\"\nif [ -d \"$LOGINITEMS_DIR\" ] ; then\nLOGINITEMS=$(find \"${LOGINITEMS_DIR}\" -depth -type d -name \"*.app\")\nRESULT=$?\nif [[ $RESULT != 0 ]] ; then\nexit 1\nfi\n\nITEMS=\"${ITEMS}\"$'\\n'\"${LOGINITEMS}\"\nfi\n\n# Prefer the expanded name, if available.\nCODE_SIGN_IDENTITY_FOR_ITEMS=\"${EXPANDED_CODE_SIGN_IDENTITY_NAME}\"\nif [ \"${CODE_SIGN_IDENTITY_FOR_ITEMS}\" = \"\" ] ; then\n# Fall back to old behavior.\nCODE_SIGN_IDENTITY_FOR_ITEMS=\"${CODE_SIGN_IDENTITY}\"\nfi\n\necho \"Identity:\"\necho \"${CODE_SIGN_IDENTITY_FOR_ITEMS}\"\n\necho \"Entitlements:\"\necho \"${CODE_SIGN_ENTITLEMENTS}\"\n\necho \"Found:\"\necho \"${ITEMS}\"\n\n# Change the Internal Field Separator (IFS) so that spaces in paths will not cause problems below.\nSAVED_IFS=$IFS\nIFS=$(echo -en \"\\n\\b\")\n\n# Loop through all items.\nfor ITEM in $ITEMS;\ndo\necho \"Signing '${ITEM}'\"\ncodesign --force --verbose --sign \"${CODE_SIGN_IDENTITY_FOR_ITEMS}\" --entitlements \"${CODE_SIGN_ENTITLEMENTS}\" \"${ITEM}\"\nRESULT=$?\nif [[ $RESULT != 0 ]] ; then\necho \"Failed to sign '${ITEM}'.\"\nIFS=$SAVED_IFS\nexit 1\nfi\ndone\n\n# Restore $IFS.\nIFS=$SAVED_IFS\n";
+		};
+		DBC09DC21C93B97E00609719 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export THE_EXE=\"${TARGET_BUILD_DIR}/${EXECUTABLE_PATH}\"\n\ninstall_name_tool -change libOpenNI2.jni.dylib @executable_path/libOpenNI2.jni.dylib \"${THE_EXE}\"\ninstall_name_tool -change libNiTE2.dylib @executable_path/libNiTE2.dylib \"${THE_EXE}\"\ninstall_name_tool -change libMWClosestPoint.dylib @executable_path/libMWClosestPoint.dylib \"${THE_EXE}\"\ninstall_name_tool -change libOpenNI2.dylib @executable_path/libOpenNI2.dylib \"${THE_EXE}\"\n\ninstall_name_tool -change libfreenect.dylib @executable_path/OpenNI2/Drivers/libfreenect.dylib \"${THE_EXE}\"\ninstall_name_tool -change libOniFile.dylib @executable_path/OpenNI2/Drivers/libOniFile.dylib \"${THE_EXE}\"\ninstall_name_tool -change libPS1080.dylib @executable_path/OpenNI2/Drivers/libPS1080.dylib \"${THE_EXE}\"\ninstall_name_tool -change libPSLink.dylib @executable_path/OpenNI2/Drivers/libPSLink.dylib \"${THE_EXE}\"\n#install_name_tool -change libDummyDevice.dylib @executable_path/OpenNI2/Drivers/libDummyDevice.dylib \"${THE_EXE}\"\n\n#install_name_tool -add_rpath @executable_path/libOpenNI2.dylib \"${THE_EXE}\"\n\notool -L \"${THE_EXE}\"\nls -l \"${THE_EXE}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4B6FFFD0C3F9AB9008CF71C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "mkdir -p \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Resources/\"\n# Copy default icon file into App/Resources\nrsync -aved \"$ICON_FILE\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Resources/\"\n# Copy bin/data into App/Resources\nrsync -avz --exclude='.DS_Store' \"${SRCROOT}/bin/data/\" \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/data/\"\n# Copy libfmod and change install directory for fmod to run\nrsync -aved ../../../libs/fmodex/lib/osx/libfmodex.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/\";\ninstall_name_tool -change @executable_path/libfmodex.dylib @executable_path/../Frameworks/libfmodex.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\";\n# Copy GLUT framework (must remove for AppStore submissions)\nrsync -aved ../../../libs/glut/lib/osx/GLUT.framework \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E4B69B580A3A1756003C02F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBBC576F1C93AAA200965CA9 /* testApp.cpp in Sources */,
+				DBBC576C1C93AA8C00965CA9 /* ofxOpenNI.cpp in Sources */,
+				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E4EEB9AC138B136A00A80321 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = openFrameworks;
+			targetProxy = E4EEB9AB138B136A00A80321 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E4B69B4E0A3A1720003C02F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/";
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-D__MACOSX_CORE__",
+					"-mtune=native",
+				);
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E4B69B4F0A3A1720003C02F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/";
+				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_UNROLL_LOOPS = YES;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-D__MACOSX_CORE__",
+					"-mtune=native",
+				);
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E4B69B600A3A1757003C02F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = NONE;
+				ICON = "$(ICON_NAME_DEBUG)";
+				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
+				INFOPLIST_FILE = "openFrameworks-Info.plist";
+				INSTALL_PATH = /Applications;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(OF_PATH)/addons/ofxOpenNI-experimental/libs/openni2/lib/osx",
+					"$(OF_PATH)/addons/ofxOpenNI-experimental/libs/openni2/lib/osx/OpenNI2/Drivers",
+					"$(OF_PATH)/addons/ofxOpenNI-experimental/libs/nite2/lib/osx",
+					"$(OF_PATH)/addons/ofxOpenNI-experimental/libs/nite2/lib/osx/NITE2",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)Debug";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E4B69B610A3A1757003C02F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = NONE;
+				ICON = "$(ICON_NAME_RELEASE)";
+				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
+				INFOPLIST_FILE = "openFrameworks-Info.plist";
+				INSTALL_PATH = /Applications;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(OF_PATH)/addons/ofxOpenNI-experimental/libs/openni2/lib/osx",
+					"$(OF_PATH)/addons/ofxOpenNI-experimental/libs/openni2/lib/osx/OpenNI2/Drivers",
+					"$(OF_PATH)/addons/ofxOpenNI-experimental/libs/nite2/lib/osx",
+					"$(OF_PATH)/addons/ofxOpenNI-experimental/libs/nite2/lib/osx/NITE2",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+				baseConfigurationReference = E4EB6923138AFD0F00A09F29;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "example-090" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4B69B4E0A3A1720003C02F2 /* Debug */,
+				E4B69B4F0A3A1720003C02F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "example-090" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4B69B600A3A1757003C02F2 /* Debug */,
+				E4B69B610A3A1757003C02F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E4B69B4C0A3A1720003C02F2 /* Project object */;
+}
