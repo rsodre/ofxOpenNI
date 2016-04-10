@@ -308,6 +308,8 @@ inline void getDepthColor(DepthColoring depthColoring, const unsigned short & de
         }
 #endif
             break;
+		default:
+			break;
     }
 }
 //

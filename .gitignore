@@ -10,9 +10,10 @@ build/
 *.perspectivev3
 *.mode1v3
 *.mode2v3
-/example/bin/
-/example/obj/
-/example/build/
+/example-090/bin/
+/example-090/obj/
+/example-090/build/
 example/*.layout
 
 libs/libfreenect*
+libs/openni2/sdk/

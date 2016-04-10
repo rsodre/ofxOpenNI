@@ -4,7 +4,32 @@
 void testApp::setup(){
     
     ofSetLogLevel(OF_LOG_VERBOSE);
-    
+	
+	//
+	// Current working directory must be: bin
+	// Or it will not find NiTE.ini !!!
+	// Don't know why but when running outside XCode, it is always set to "/"
+	// So we change it back here...
+	//
+	// Try to restore automatically
+	ofRestoreWorkingDirectoryToDefault();
+	// Get current working directory
+	char cwd[1024] = { '\0' };
+	std::string pwd( getcwd(cwd, sizeof(cwd)) == NULL ? "" : cwd );
+	if ( pwd.compare("/") == 0 )
+	{
+		ofLogError() << "=== getcwd [" << pwd << "] (need to change!)";
+		//ofRestoreWorkingDirectoryToDefault();		// not working
+		std::string exeDir( ofFilePath::getCurrentExeDir() );
+		std::string newpwd( exeDir + "../../../" );
+		//ofLogError() << "=== newpwd [" << newpwd << "]";
+		
+		// set and read again
+		chdir( newpwd.c_str() );
+		pwd = std::string( getcwd(cwd, sizeof(cwd)) == NULL ? "" : cwd );
+		ofLogError() << "=== newpwd [" << pwd << "]";
+	}
+
     device.setup();
     device.addDepthStream();
     device.addImageStream();
@@ -25,9 +50,22 @@ void testApp::draw(){
     
     device.draw();
     
+	int y = ofGetHeight() - 10;
+	int dy = 20;
     ostringstream os;
     os << "FPS: " << ofGetFrameRate();
-    ofDrawBitmapString(os.str(), 20, ofGetHeight() - 20);
+    ofDrawBitmapString( os.str(), 20, y );
+	y -= dy;
+	ofDrawBitmapString( std::string("Users: "+std::string(device.isUsersOn()?"ON":"OFF")), 20, y );
+	y -= dy;
+	ofDrawBitmapString( std::string("Hands: "+std::string(device.isHandsOn()?"ON":"OFF")), 20, y );
+	y -= dy;
+	ofDrawBitmapString( std::string("Image: "+std::string(device.isImageOn()?"ON":"OFF")), 20, y );
+	y -= dy;
+	ofDrawBitmapString( std::string("Depth: "+std::string(device.isDepthOn()?"ON":"OFF")), 20, y );
+
+	
+	
 }
 
 //--------------------------------------------------------------

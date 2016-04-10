@@ -71,7 +71,53 @@ public:
     
     bool isDepthFrameNew();
     bool isImageFrameNew();
-    
+	
+	// Roger
+	
+	bool isImageOn()				{ return bUseImage; }
+	bool isDepthOn()				{ return bUseDepth; }
+	bool isInfraOn()				{ return bUseInfra; }
+	bool isUsersOn()				{ return bUseUsers; }
+	bool isHandsOn()				{ return bUseHands; }
+	
+	void setMaxNumUsers(int num)	{ maxNumUsers = num; }
+	void setMaxNumHands(int num)	{ maxNumHands = num; }
+
+	int getMaxNumUsers()			{ return maxNumUsers; }
+	int getMaxNumHands()			{ return maxNumHands; }
+	
+	int	getNumTrackedUsers()		{ return trackedUsers.size(); }
+	int	getNumTrackedHands()		{ return trackedHands.size(); }
+
+	map<int, ofxOpenNIUser> & getTrackedUsers()		{ return trackedUsers; }
+	map<int, ofxOpenNIHand> & getTrackedHands()		{ return trackedHands; }
+	
+//	ofxOpenNIUser&	getTrackedUser(int index)	{ return trackedUsers[index]; }
+//	ofxOpenNIHand& getTrackedHand(int index)	{ return trackedHands[index]; }
+	
+	ofTexture& getDepthTextureReference()	{ return depthTexture; }
+	ofTexture& getimageTextureReference()	{ return imageTexture; }
+	
+	ofVec2f getDepthSize()		{ return ofVec2f( depthWidth, depthHeight ); };
+	ofVec2f getImageSize()		{ return ofVec2f( imageWidth, imageHeight ); };
+
+	void setMirror(bool b)		{ bMirror = b; }
+//	void setMirror(bool b)
+//	{
+//		openni::Status status;
+//		if(bUseDepth)
+//		{
+//			status = depthStream.setMirroringEnabled(b);
+//			printf(">>> depthStream.setMirroringEnabled() status [%d]\n",status);
+//		}
+//		if(bUseImage)
+//		{
+//			status = imageStream.setMirroringEnabled(b);
+//			printf(">>> imageStream.setMirroringEnabled() status [%d]\n",status);
+//		}
+//	}
+	
+
 protected:
     
     void updateGenerators();
@@ -130,7 +176,12 @@ protected:
 	bool bUseDepthRaw;
     bool bUseRecord;
     bool bUsePlayer;
-    
+	
+	// Roger
+	bool bMirror;
+	int maxNumUsers;
+	int maxNumHands;
+
 };
 
 #endif

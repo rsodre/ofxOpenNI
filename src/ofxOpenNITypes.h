@@ -113,7 +113,7 @@ public:
             }else{
                 ofSetColor(255, 0, 0);
             }
-            ofCircle(j.positionProjective.x, j.positionProjective.y, 5);
+            ofDrawCircle(j.positionProjective.x, j.positionProjective.y, 5);
         }
         ofNoFill();
         ofPopMatrix();
@@ -184,7 +184,7 @@ public:
         ofPushMatrix();
         ofFill();
         ofSetColor(255, 255, 0);
-        ofCircle(positionProjective.x, positionProjective.y, 5);
+        ofDrawCircle(positionProjective.x, positionProjective.y, 5);
         ofNoFill();
         if(bUseHistory) history.draw();
         ofPopMatrix();

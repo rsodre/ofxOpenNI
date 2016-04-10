@@ -1,4 +1,4 @@
-/*
+	/*
  * ofxOpenNI.cpp
  *
  * Copyright 2011-2013 (c) Matthew Gingold [gameover] http://gingold.com.au
@@ -32,6 +32,11 @@
 ofxOpenNI::ofxOpenNI(){
     stop();
     CreateRainbowPallet();
+	
+	// Roger
+	bMirror = false;
+	maxNumUsers = 3;
+	maxNumHands = 6;
 }
 
 //--------------------------------------------------------------
@@ -41,7 +46,11 @@ ofxOpenNI::~ofxOpenNI(){
 
 //--------------------------------------------------------------
 bool ofxOpenNI::setup(){
-    
+	
+//	OpenNI::setLogConsoleOutput(true);
+//	OpenNI::setLogFileOutput(true);
+//	OpenNI::setLogOutputFolder("./Log");
+	
     openni::Status rc = OpenNI::initialize();
     if (rc != openni::STATUS_OK) {
         ofLogError() << "Failed to initialize OpenNI:" << OpenNI::getExtendedError();
@@ -76,7 +85,7 @@ bool ofxOpenNI::addDepthStream(){
     }
     
     openni::Status rc = depthStream.create(device, SENSOR_DEPTH);
-    
+	
     if(rc != openni::STATUS_OK){
         
         ofLogError() << "Failed to add depth stream";
@@ -94,6 +103,8 @@ bool ofxOpenNI::addDepthStream(){
             ofLogNotice() << "Succeeded to add depth stream";
             allocateDepthBuffers();
             bUseDepth = true;
+			// Roger
+			//depthStream.setMirroringEnabled(bMirror);
         }
         
     }
@@ -113,7 +124,7 @@ bool ofxOpenNI::addImageStream(){
     }
     
     openni::Status rc = imageStream.create(device, SENSOR_COLOR);
-    
+	
     if(rc != openni::STATUS_OK){
         
         ofLogError() << "Failed to add image stream";
@@ -131,7 +142,9 @@ bool ofxOpenNI::addImageStream(){
             ofLogNotice() << "Succeeded to add image stream";
             allocateImageBuffers();
             bUseImage = true;
-        }
+			// Roger
+			//imageStream.setMirroringEnabled(bMirror);
+		}
         
     }
     
@@ -159,7 +172,7 @@ bool ofxOpenNI::addUserTracker(){
     
     if(rc != nite::STATUS_OK){
         
-        ofLogError() << "Failed to add user tracker";
+        ofLogError() << "Failed to add user tracker [" << rc << "]";
         bUseUsers = false;
         
     }else{
@@ -274,11 +287,19 @@ void ofxOpenNI::update(){
     if(!bUseDevice) return;
     
     if(isDepthFrameNew()){
-       depthTexture.loadData(depthPixels.getPixels(), depthWidth, depthHeight, GL_RGBA);
+		// Roger
+		if ( bMirror)
+			depthPixels.mirror(false, true);
+		depthTexture.loadData(depthPixels.getData(), depthWidth, depthHeight, GL_RGBA);
+		bIsDepthFrameNew = false;
     }
 
     if(isImageFrameNew()){
-        imageTexture.loadData(imagePixels.getPixels(), imageWidth, imageHeight, GL_RGB);
+		// Roger
+		if ( bMirror)
+			imagePixels.mirror(false, true);
+        imageTexture.loadData(imagePixels.getData(), imageWidth, imageHeight, GL_RGB);
+		bIsImageFrameNew = false;
     }
     
 }
@@ -309,7 +330,7 @@ void ofxOpenNI::updateDepthFrame(){
     if(depthFrame.isValid()){
         const openni::DepthPixel* depth = (const openni::DepthPixel*)depthFrame.getData();
         for (int y = depthFrame.getCropOriginY(); y < depthFrame.getHeight() + depthFrame.getCropOriginY(); y++){
-            unsigned char * texture = depthPixels.getPixels() + y * depthFrame.getWidth() * 4 + depthFrame.getCropOriginX() * 4;
+            unsigned char * texture = depthPixels.getData() + y * depthFrame.getWidth() * 4 + depthFrame.getCropOriginX() * 4;
             for (int x = 0; x < depthPixels.getWidth(); x++, depth++, texture += 4) {
                 ofColor depthColor;
                 
@@ -343,7 +364,7 @@ void ofxOpenNI::updateImageFrame(){
 void ofxOpenNI::updateUserFrame(){
     if(userFrame.isValid()){
         const nite::Array<nite::UserData>& users = userFrame.getUsers();
-        for(int i = 0; i < users.getSize(); ++i){
+        for(int i = 0; i < users.getSize() && i < maxNumUsers; ++i){
             const UserData& user = users[i];
             
             if(user.isNew()){
@@ -432,7 +453,7 @@ void ofxOpenNI::updateHandFrame(){
         }
         
         const nite::Array<nite::HandData>& hands = handFrame.getHands();
-        for(int i = 0; i < hands.getSize(); ++i){
+        for(int i = 0; i < hands.getSize() && i < maxNumHands ; ++i){
             const HandData& hand = hands[i];
             
             if(!hand.isTracking()){
