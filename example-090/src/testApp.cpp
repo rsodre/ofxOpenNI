@@ -41,6 +41,13 @@ void testApp::setup(){
 }
 
 //--------------------------------------------------------------
+void testApp::exit()
+{
+	device.stop();
+}
+
+
+//--------------------------------------------------------------
 void testApp::update(){
     device.update();
 }
@@ -56,9 +63,9 @@ void testApp::draw(){
     os << "FPS: " << ofGetFrameRate();
     ofDrawBitmapString( os.str(), 20, y );
 	y -= dy;
-	ofDrawBitmapString( std::string("Users: "+std::string(device.isUsersOn()?"ON":"OFF")), 20, y );
+	ofDrawBitmapString( std::string("Users: "+std::string(device.isUsersOn()?"ON":"OFF")+" ("+ofToString(device.getNumTrackedUsers())+")"), 20, y );
 	y -= dy;
-	ofDrawBitmapString( std::string("Hands: "+std::string(device.isHandsOn()?"ON":"OFF")), 20, y );
+	ofDrawBitmapString( std::string("Hands: "+std::string(device.isHandsOn()?"ON":"OFF")+" ("+ofToString(device.getNumTrackedHands())+")"), 20, y );
 	y -= dy;
 	ofDrawBitmapString( std::string("Image: "+std::string(device.isImageOn()?"ON":"OFF")), 20, y );
 	y -= dy;
